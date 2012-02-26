@@ -1,0 +1,33 @@
+<script type="text/javascript">
+
+	$(function() {
+		$('#image1 a').lightBox({
+		overlayBgColor: '#FFF',
+		overlayOpacity: 0.7,
+		txtImage: '画像',
+		txtOf: 'の'
+		});
+	});
+</script>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ptitle:</b>
+  <%= @product.ptitle %>
+</p>
+
+<p>
+  <b>Pimage:</b>
+  <%= @product.pimage %>
+	<div id="image1">
+		<a href= "<%= "/images/" + @product.pimage  %>">
+			<img alt="" height ="300" width = "300" src = "<%= "/images/" + @product.pimage %>">
+		</a>
+	</div>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
